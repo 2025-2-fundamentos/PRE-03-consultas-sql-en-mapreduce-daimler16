@@ -13,7 +13,7 @@ def mapreduce(input_folder, output_folder, mapper_fn, reducer_fn):
         return sequence
 
     def save_results_to_output(result):
-        with open("files/output/part-00000", "w", encoding="utf-8") as f:
+        with open(f"{output_folder}/part-00000", "w", encoding="utf-8") as f:
             for key, value in result:
                 f.write(f"{key}\t{value}\n")
 
@@ -34,7 +34,6 @@ def mapreduce(input_folder, output_folder, mapper_fn, reducer_fn):
     create_output_directory(output_folder)
     save_results_to_output(result)
     create_success_file(output_folder)
-    
-    
-    
 
+
+    
